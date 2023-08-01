@@ -35,52 +35,47 @@ Main goal of the application is to:
 
 ## 4. Create a Work Breakdown Structure (WBS)
 - Divide the project into smaller, manageable tasks.
-    - Project Planning
-
-    1.1 Define Scope and Objectives
-    1.2 Analyze and Understand Requirements
-    1.3 Choose Technology Stack
-    1.4 Design Architecture
-    1.5 Develop Timeline and Budget
-    1.6 Plan for Testing and Deployment
-    1.7 Address Legal and Compliance
-    1.8 Risk Management Plan
-    1.9 Collaboration and Communication
-    1.10 Documentation
-    Front-End Development
-
-    2.1 Design UI/UX
-    2.1.1 Sketch Layout
-    2.1.2 Design Pages
-    2.1.3 Implement Charting (e.g., Chart.js)
-    2.2 Develop Pages
-    2.2.1 Model Review Pages
-    2.2.2 Overview Page
-    2.2.3 Best Model Page
-    2.3 Testing and Quality Assurance
-    Back-End Development
-
-    3.1 Set Up Development Environment
-    3.2 Implement Web Framework (Flask)
-    3.3 Database Design and Implementation (MySQL)
-    3.4 Develop APIs
-    3.4.1 Implement Model Logic
-    3.4.2 Implement Comparison Logic
-    3.5 Integration with Front-End
-    3.6 Testing and Quality Assurance
-    Deployment
-
-    4.1 Select Hosting Platform
-    4.2 Prepare for Deployment
-    4.3 Deploy Application
-    4.4 Monitor and Maintain
-    Documentation and Reporting
-
-    5.1 Document Code
-    5.2 Create User Guide
-    5.3 Prepare Final Report
-    - Estimate the time and resources needed for each task.
-    - Identify dependencies between tasks and potential bottlenecks.
+  - **Project Planning**
+    1. Define Scope and Objectives
+    2. Analyze and Understand Requirements
+    3. Choose Technology Stack
+    4. Design Architecture
+    5. Develop Timeline and Budget
+    6. Plan for Testing and Deployment
+    7. Address Legal and Compliance
+    8. Risk Management Plan
+    9. Collaboration and Communication
+    10. Documentation
+  - **Front-End Development**
+    1. Design UI/UX
+       - Sketch Layout
+       - Design Pages
+       - Implement Charting (e.g., Chart.js)
+    2. Develop Pages
+       - Model Review Pages
+       - Overview Page
+       - Best Model Page
+    3. Testing and Quality Assurance
+  - **Back-End Development**
+    1. Set Up Development Environment
+    2. Implement Web Framework (Flask)
+    3. Database Design and Implementation (MySQL)
+    4. Develop APIs
+       - Implement Model Logic
+       - Implement Comparison Logic
+    5. Integration with Front-End
+    6. Testing and Quality Assurance
+  - **Deployment**
+    1. Select Hosting Platform
+    2. Prepare for Deployment
+    3. Deploy Application
+    4. Monitor and Maintain
+  - **Documentation and Reporting**
+    1. Document Code
+    2. Create User Guide
+    3. Prepare Final Report
+- Estimate the time and resources needed for each task.
+- Identify dependencies between tasks and potential bottlenecks.
 
 ## 5. Design the Architecture
 - Outline the architecture of the back-end (e.g., database schema, API design).
