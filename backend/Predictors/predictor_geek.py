@@ -1,7 +1,5 @@
 #Using (Logistic Regression, Support Vector Machine, XGBClassifier) Models
 
-
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -18,7 +16,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-df = pd.read_csv('TSLA.csv')
+df = pd.read_csv('../../db/TSLA.csv')
 df.head()
 # print(df.shape) #Shape of the Data Set
 

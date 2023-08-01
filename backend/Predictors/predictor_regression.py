@@ -1,3 +1,8 @@
+# Predictor using Linear Regression
+# Mean Squared Error: 3012.229215640399
+# Mean Absolute Percentage Error (MAPE): 45.78%
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,7 +10,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
-df = pd.read_csv('TSLA.csv')
+df = pd.read_csv('../../db/TSLA.csv')
 
 #Preprocess Data
 df['Date'] = pd.to_datetime(df['Date'])
