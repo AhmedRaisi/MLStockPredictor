@@ -1,2 +1,2 @@
-# StockPricePredictor
-Stock price predictor using long short term memory network.
+# ModelMarket
+ModelMarket is a comprehensive stock prediction platform aimed at providing insights into various predictive models for the stock market. Through a user-friendly interface, it displays different prediction models, their accuracy, mean squared errors (MSE), and other relevant metrics. The main goal is to offer an overview of each model, comparisons, and ultimately create the best predictor possible. Targeted as a personal project with potential value to employers, it is designed using HTML, CSS, JavaScript, Chart.js for the front end, and Python, Flask, and MySQL for the back end. Future scalability and constant updates to the database are part of the envisioned roadmap.
