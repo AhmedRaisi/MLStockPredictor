@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read the CSV file
-file_path = '/mnt/c/Users/Ahmed/Projects/StockPricePredictor/db/TSLA.csv'
+file_path = '../../db/TSLA.csv'
 df = pd.read_csv(file_path)
 
 # Convert the 'Date' column to datetime

@@ -1,14 +1,21 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
-import '../styles/App.css';
-import MyComponent from '../components/MyComponent';
-import Header from '../components/Header'; 
-import Footer from '../components/Footer'; 
+import HeroSection from '../components/homepage/HeroSection';
+import FeaturesOverview from '../components/homepage/FeaturesOverview';
+import ModelShowcase from '../components/homepage/ModelShowcase';
+import HowItWorks from '../components/homepage/HowItWorks';
+import SuccessStories from '../components/homepage/SuccessStories';
+import FAQ from '../components/homepage/FAQ';
+import '../styles/HomePage.css'; // Import the CSS file for HomePage
 
 function HomePage() {
   return (
-    <div>
-      <p>Welcome to the Home Page!!</p>
+    <div className="home-page">
+      <HeroSection />
+      <FeaturesOverview />
+      <ModelShowcase />
+      <HowItWorks />
+      <SuccessStories />
+      <FAQ />
     </div>
   );
 }

@@ -1,0 +1,67 @@
+/* General styling for the home page */
+.home-page {
+    background-color: #f7f9fc;
+  }
+  
+  .home-page > section {
+    padding: 30px 60px;
+    background: #ffffff;
+    margin: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 36px;
+    color: #333333;
+  }
+  
+  .hero-section p {
+    color: #666666;
+  }
+  
+  /* Features Overview */
+  .features-overview h2 {
+    font-size: 28px;
+  }
+  
+  /* Model Showcase */
+  .model-showcase .chart-container {
+    height: 400px;
+  }
+  
+  .model-showcase h2 {
+    font-size: 28px;
+  }
+  
+  /* How It Works */
+  .how-it-works h2 {
+    font-size: 28px;
+  }
+  
+  /* Success Stories */
+  .success-stories h2 {
+    font-size: 28px;
+  }
+  
+  /* FAQ */
+  .faq h2 {
+    font-size: 28px;
+  }
+  
+  /* Common styling for buttons */
+  button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  

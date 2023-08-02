@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="title">Model Market</h1>
+      <h1 className="title">MLStockPredictors</h1>
       <div className="nav-container">
         <nav className="header-nav">
           <Link to="/">Home</Link>
