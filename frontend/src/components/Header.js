@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import './Header.css';
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <header className="header">
-      <h1 className="title">Predictor Application</h1>
+      <h1 className="title">Model Market</h1>
       <div className="nav-container">
         <nav className="header-nav">
           <Link to="/">Home</Link>
