@@ -1,15 +1,28 @@
-import React from 'react';
-import './Header.css'; 
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 const Header = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <header className="header">
-      <h1>Predictor Application</h1>
-      <nav className="header-nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
+      <h1 className="title">Predictor Application</h1>
+      <div className="nav-container">
+        <nav className="header-nav">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+        <div className="models-dropdown" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+          <button className="models-button" onClick={() => setShowDropdown(!showDropdown)}>Models ▼</button>
+          {showDropdown && (
+            <div className="models-list">
+              <Link to="/models/regression">Regression Model</Link>
+              <Link to="/models/lstm">LSTM Model</Link>
+            </div>
+          )}
+        </div>
+      </div>
     </header>
   );
 };
