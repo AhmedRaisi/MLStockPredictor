@@ -5,23 +5,20 @@ function HowItWorks() {
     <section className="how-it-works">
       <h1>How It Works</h1>
       <div className="step">
-        <h2>Step 1: Choose a Model</h2>
-        <p>Select a stock prediction model from our curated collection of machine learning models tailored for different stocks and time frames.</p>
+        <h2>Step 1: Explore Different Models</h2>
+        <p>Discover a variety of stock prediction models tailored for different stocks and time frames in our curated collection.</p>
       </div>
       <div className="step">
-        <h2>Step 2: Enter Your Data</h2>
-        <p>Input the necessary stock data or connect your trading account to fetch the data automatically.</p>
+        <h2>Step 2: Learn About the Models</h2>
+        <p>Gain insights into each model's working principles and how they leverage machine learning to predict stock prices.</p>
       </div>
       <div className="step">
-        <h2>Step 3: Analyze Predictions</h2>
-        <p>Our algorithms will predict future stock prices based on historical data. Analyze these predictions to make informed trading decisions.</p>
+        <h2>Step 3: Compare Model Results</h2>
+        <p>Visualize and compare the performance of different models on historical data to assess their accuracy and reliability.</p>
       </div>
       <div className="step">
         <h2>Step 4: Make Informed Decisions</h2>
-        <p>With insights gained from our predictive models, you can make trading decisions with confidence, knowing that you have the power of machine learning on your side.</p>
-      </div>
-      <div className="get-started">
-        <button>Get Started Now</button>
+        <p>Empowered with predictive analysis, confidently make informed trading decisions to maximize your returns.</p>
       </div>
     </section>
   );

@@ -14,8 +14,16 @@ const Header = () => {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <div className="models-dropdown" onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-          <button className="models-button" onClick={() => setShowDropdown(!showDropdown)}>Models ▼</button>
+        <div
+          className="models-dropdown"
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        >
+          <Link to="/modeloverviewpage">
+            <button className="models-button" onClick={() => setShowDropdown(!showDropdown)}>
+              Models ▼
+            </button>
+          </Link>
           {showDropdown && (
             <div className="models-list">
               <Link to="/models/regression">Regression Model</Link>

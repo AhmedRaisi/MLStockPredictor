@@ -7,6 +7,7 @@ import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import RegressionModelPage from './RegressionModelPage';
 import LSTMModelPage from './LSTMModelPage';
+import ModelOverview from './ModelOverviewPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/models/regression" element={<RegressionModelPage />} />
           <Route path="/models/lstm" element={<LSTMModelPage />} />
+          <Route path="/modeloverviewpage" element={<ModelOverview />} />
         </Routes>
         <Footer /> 
       </div>
