@@ -22,7 +22,7 @@ function ModelShowcase() {
         <p>Dive into the Ensemble model, a combination of multiple predictive models, to enhance prediction accuracy and robustness in stock forecasting.</p>
       </div>
       <div className="get-started">
-        <Link to="/about">
+        <Link to="/modeloverviewpage">
           <button>Learn More</button>
         </Link>
       </div>
