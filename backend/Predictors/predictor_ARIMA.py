@@ -1,40 +1,37 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
+from sklearn.metrics import mean_squared_error
 
-# Step 1: Load the dataset
-data_path = "../../db/TSLA.csv"
-df = pd.read_csv(data_path, parse_dates=["Date"], index_col="Date")
+# Step 1: Load the data
+df = pd.read_csv('../../db/TSLA.csv', parse_dates=['Date'], index_col='Date')
 
-# Step 2: Explore the data
-print(df.head())
-plt.figure(figsize=(10, 6))
-plt.plot(df.index, df['Close'], label='Closing Price', color='green')
-plt.xlabel('Date')
-plt.ylabel('Price')
-plt.title('TSLA Stock Price')
-plt.legend()
-plt.show()
+# Step 2: Data Splitting
+train_size = int(0.8 * len(df))
+train_data = df.iloc[:train_size]
+test_data = df.iloc[train_size:]
 
-# Step 3: ARIMA Model
-model = ARIMA(df['Close'], order=(5,1,0))
+# Step 3: Model Fitting
+model = ARIMA(train_data['Close'], order=(5, 1, 0))
 results = model.fit()
 
-# Step 4: Make predictions for the next 30 days
-forecast = results.forecast(steps=30)
+# Step 4: Make predictions for the test set
+forecast = results.forecast(steps=len(test_data))
 
-# Step 5: Create a date range for the forecast
-forecast_dates = pd.date_range(df.index[-1], periods=30, freq=df.index.freq)
+# Step 5: Calculate MSE
+mse = mean_squared_error(test_data['Close'], forecast)
+print("Mean Squared Error (MSE):", mse)
 
-# Step 6: Combine original data and forecast data for plotting
-combined_df = pd.concat([pd.Series(index=df.index, data=df['Close']), pd.Series(forecast, index=forecast_dates)])
+# Step 6: Create a date range for the forecast
+forecast_dates = pd.date_range(test_data.index[0], periods=len(test_data), freq=df.index.freq)
 
-# Step 7: Plot the results
+# Step 7: Plot the actual test data and forecasted values
 plt.figure(figsize=(10, 6))
-plt.plot(combined_df.index, combined_df.values, label='Forecast', color='blue')
-plt.scatter(forecast_dates, forecast, label='Forecast', color='red', marker='o')
+plt.plot(test_data.index, test_data['Close'], label='Test Data', color='green')
+plt.plot(forecast_dates, forecast, label='Forecast', color='red')
 plt.xlabel('Date')
-plt.ylabel('Price')
-plt.title('TSLA Stock Price Prediction with ARIMA')
+plt.ylabel('Stock Price')
+plt.title('ARIMA Stock Price Prediction')
 plt.legend()
 plt.show()

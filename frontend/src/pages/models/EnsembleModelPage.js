@@ -1,5 +1,5 @@
 import React from 'react';
-import ModelLayout from '../components/models/modellayout';
+import ModelLayout from '../../components/models/modellayout';
 
 const EnsembleModelPage = () => {
   const title = "Ensemble Model";
