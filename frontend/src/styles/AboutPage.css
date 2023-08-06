@@ -1,0 +1,95 @@
+/* General styling for the about page */
+.about-page {
+    background-color: #f7f9fc;
+  }
+  
+  .about-page > section {
+    padding: 30px 60px;
+    background: #ffffff;
+    margin: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 36px;
+    color: #333333;
+  }
+  
+  .hero-section p {
+    color: #666666;
+  }
+  
+  /* Features Overview */
+  .features-overview h2 {
+    font-size: 28px;
+  }
+  
+  /* Model Showcase */
+  .model-showcase .chart-container {
+    height: 400px;
+  }
+  
+  .model-showcase h2 {
+    font-size: 28px;
+  }
+  
+  /* How It Works */
+  .how-it-works h2 {
+    font-size: 28px;
+  }
+  
+  /* Success Stories */
+  .success-stories h2 {
+    font-size: 28px;
+  }
+  
+  /* FAQ */
+  .faq h2 {
+    font-size: 28px;
+  }
+  
+  /* Common styling for buttons */
+  button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Styling for LinkedIn and GitHub buttons */
+  .contact-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-buttons a {
+    margin-right: 10px;
+    display: inline-block;
+    background-color: #0077b5; /* LinkedIn blue color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-buttons a:hover {
+    background-color: #005f95; /* Darker shade on hover */
+  }
+  
+  .contact-buttons img {
+    width: 30px; /* Adjust the size of the icons as needed */
+    height: 30px;
+    border-radius: 50%; /* To make them circular */
+  }
+  

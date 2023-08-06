@@ -5,12 +5,12 @@ import Footer from '../components/Footer';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
-import RegressionModelPage from './RegressionModelPage';
-import LSTMModelPage from './LSTMModelPage';
+import RegressionModelPage from './models/RegressionModelPage';
+import LSTMModelPage from './models/LSTMModelPage';
 import ModelOverview from './ModelOverviewPage';
-import ARIMAModelPage from './ARIMAModelPage';
-import ProphetModelPage from './ProphetModelPage';
-import EnsembleModelPage from './EnsembleModelPage';
+import ARIMAModelPage from './models/ARIMAModelPage';
+import ProphetModelPage from './models/ProphetModelPage';
+import EnsembleModelPage from './models/EnsembleModelPage';
 
 function App() {
   return (
