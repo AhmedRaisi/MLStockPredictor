@@ -7,7 +7,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="title">MLStockPredictors</h1>
+      <Link to="/" className="title-link">
+        <h1 className="title">MLStockPredictors</h1>
+      </Link>
       <div className="nav-container">
         <nav className="header-nav">
           <Link to="/">Home</Link>
@@ -28,6 +30,9 @@ const Header = () => {
             <div className="models-list">
               <Link to="/models/regression">Regression Model</Link>
               <Link to="/models/lstm">LSTM Model</Link>
+              <Link to="/models/arima">ARIMA Model</Link>
+              <Link to="/models/prophet">Prophet Model</Link>
+              <Link to="/models/ensemble">Ensemble Model</Link>
             </div>
           )}
         </div>
