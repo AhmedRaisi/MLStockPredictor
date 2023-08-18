@@ -1,31 +1,70 @@
 import requests
 import json
-import schedule
-import time
+import numpy as np
+from datetime import datetime, timedelta
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import TimeseriesGenerator
 
-API_KEY = '5DJBLCIB2W80QWFW'
-SYMBOL = 'TSLA'  # Replace with the stock symbol you want to fetch
+from django.db import models
+from .models import PredictedStockData
 
-def fetch_stock_data():
-    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={SYMBOL}&apikey={API_KEY}'
-    response = requests.get(url)
-    data = response.json()
+class StockPredictor:
 
-    daily_data = data['Time Series (Daily)']
-    for date, values in daily_data.items():
-        date_obj = date
-        open_price = values['1. open']
-        high_price = values['2. high']
-        low_price = values['3. low']
-        close_price = values['4. close']
-        volume = values['5. volume']
+    model_path = os.path.join(os.path.dirname(__file__), 'models', 'lstm_model.h5')
 
-        # Update your database here with the fetched data
-        # You can use the Django model to create new entries
+    def __init__(self, stock_symbol):
+        self.stock_symbol = stock_symbol
+        self.api_key = '5DJBLCIB2W80QWFW'
+        self.model = load_model(model_path)  # Load your trained LSTM model
 
-# Schedule the function to run daily
-schedule.every().day.at('15:30').do(fetch_stock_data)  # Adjust the time as needed
+    def fetch_historical_data(self, num_days=20):
+        api_url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={self.stock_symbol}&apikey={self.api_key}'
+        response = requests.get(api_url)
+        data = response.json()
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+        if 'Time Series (Daily)' in data:
+            time_series = data['Time Series (Daily)']
+            historical_data = []
+            for date, values in time_series.items():
+                historical_data.append({
+                    'date': date,
+                    'close_price': float(values['4. close'])
+                })
+                if len(historical_data) == num_days:
+                    break
+            return historical_data
+        return []
+
+    def prepare_data(self, historical_data):
+        close_prices = [item['close_price'] for item in historical_data]
+        return np.array(close_prices).reshape(-1, 1)
+
+    def generate_predictions(self, data, num_predictions=1):
+        predictions = []
+        for _ in range(num_predictions):
+            prediction = self.model.predict(data.reshape(1, data.shape[0], 1))
+            predictions.append(prediction[0, 0])
+            data = np.roll(data, -1)
+            data[-1] = prediction
+        return predictions
+
+    def save_predictions(self, predictions):
+        latest_date = datetime.strptime(historical_data[-1]['date'], '%Y-%m-%d')
+        next_day = latest_date + timedelta(days=1)
+        for prediction in predictions:
+            PredictedStockData.objects.create(
+                date=next_day,
+                actual_closing_price=0,  # Set the actual closing price if available
+                predicted_closing_price=prediction
+            )
+            next_day += timedelta(days=1)
+
+if __name__ == '__main__':
+    stock_symbol = 'TSLA'  # Replace with your desired stock symbol
+    stock_predictor = StockPredictor(stock_symbol)
+    
+    historical_data = stock_predictor.fetch_historical_data(num_days=20)
+    if historical_data:
+        prepared_data = stock_predictor.prepare_data(historical_data)
+        predictions = stock_predictor.generate_predictions(prepared_data, num_predictions=5)
+        stock_predictor.save_predictions(predictions)
