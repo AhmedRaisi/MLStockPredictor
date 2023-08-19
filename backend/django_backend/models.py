@@ -45,7 +45,7 @@ class DailyStockData(models.Model):
 
 class PredictedStockData(models.Model):
     date = models.DateField()
-    actual_closing_price = models.DecimalField(max_digits=10, decimal_places=2)
+    actual_closing_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     predicted_closing_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
