@@ -11,6 +11,7 @@ import ModelOverview from './ModelOverviewPage';
 import ARIMAModelPage from './models/ARIMAModelPage';
 import ProphetModelPage from './models/ProphetModelPage';
 import EnsembleModelPage from './models/EnsembleModelPage';
+import Predictions from './PredictionPage'; 
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/models/arima" element={<ARIMAModelPage />} />
           <Route path="/models/prophet" element={<ProphetModelPage />} />
           <Route path="/models/ensemble" element={<EnsembleModelPage />} />
+          <Route path="/predictions" element={<Predictions />} />
         </Routes>
         <Footer /> 
       </div>

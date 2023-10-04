@@ -26,6 +26,9 @@ def fetch_historical_data(stock_symbol, num_days=20):
         for date, values in time_series.items():
             historical_data.append({
                 'date': date,
+                'open_price': float(values['1. open']),
+                'high_price': float(values['2. high']),
+                'low_price': float(values['3. low']),
                 'close_price': float(values['4. close'])
             })
             if len(historical_data) == num_days:
@@ -34,8 +37,21 @@ def fetch_historical_data(stock_symbol, num_days=20):
     return []
 
 def prepare_input_data(historical_data):
-    close_prices = [item['close_price'] for item in historical_data][-4:]  # Taking the last 4 data points
-    return np.array(close_prices).reshape(-1, 1)
+    # Extracting prices
+    open_prices = [item['open_price'] for item in historical_data]
+    high_prices = [item['high_price'] for item in historical_data]
+    low_prices = [item['low_price'] for item in historical_data]
+    close_prices = [item['close_price'] for item in historical_data]
+
+    # Combining prices
+    combined_data = list(zip(open_prices, high_prices, low_prices, close_prices))
+    
+    # Making sure there are 20 entries
+    while len(combined_data) < 20:
+        combined_data.insert(0, (0, 0, 0, 0))
+    
+    return np.array(combined_data)[-20:]
+
 
 def generate_predictions():
     model_path = os.path.join(os.path.dirname(__file__), 'scripts', 'models', 'lstm_model.h5')
@@ -54,8 +70,8 @@ def generate_predictions():
         return
     
     input_data = prepare_input_data(historical_data)
+    predicted_price = model.predict(input_data.reshape(1, 20, 4))
     
-    predicted_price = model.predict(input_data.reshape(1, input_data.shape[0], 1))
     
     new_date = latest_date + timedelta(days=1)
     PredictedStockData.objects.create(
