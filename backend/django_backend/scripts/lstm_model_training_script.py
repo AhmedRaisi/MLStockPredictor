@@ -6,8 +6,7 @@ from tensorflow.keras.layers import LSTM, Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-# Load your historical stock data from TSLA.csv (replace this with your data loading code)
-csv_file_path = 'TSLA.csv'  # Update this with the correct path
+csv_file_path = 'TSLA.csv'
 data = pd.read_csv(csv_file_path)
 
 # Prepare input features and target values
@@ -19,17 +18,27 @@ scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
 y_scaled = scaler.fit_transform(y.reshape(-1, 1))
 
-# Split data into training and validation sets
-X_train, X_val, y_train, y_val = train_test_split(X_scaled, y_scaled, test_size=0.2, shuffle=False)
+# Reshape data to create sequences of 20 days for LSTM input
+def create_dataset(X, y, time_steps=20):
+    Xs, ys = [], []
+    for i in range(len(X) - time_steps):
+        v = X[i:(i + time_steps)]
+        Xs.append(v)
+        ys.append(y[i + time_steps])
+    return np.array(Xs), np.array(ys)
 
-# Reshape X_train to have three dimensions (num_samples, num_time_steps, num_features)
-X_train = X_train.reshape(X_train.shape[0], X_train.shape[1], 1)  # Adding the third dimension
+time_steps = 20
+X_seq, y_seq = create_dataset(X_scaled, y_scaled, time_steps)
+
+# Split data into training and validation sets
+X_train, X_val, y_train, y_val = train_test_split(X_seq, y_seq, test_size=0.2, shuffle=False)
 
 # Build the LSTM model
 model = Sequential([
-    LSTM(50, activation='relu', input_shape=(X_train.shape[1], X_train.shape[2])),
+    LSTM(50, activation='relu', input_shape=(time_steps, X_train.shape[2])),
     Dense(1)
 ])
+
 # Compile the model
 model.compile(optimizer='adam', loss='mean_squared_error')
 
