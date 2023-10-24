@@ -1,57 +1,67 @@
-/* General styling for the model layout */
+/* Theme Background and Font */
+body {
+  background-color: #1F2833;
+  color: #C5C6C7;
+  font-family: Arial, sans-serif; 
+  margin: 0;
+  padding: 0;
+}
+
+/* Model Layout Styling */
 .model-layout {
-    background-color: #f7f9fc;
-  }
-  
-  .model-layout > section {
-    padding: 30px 60px;
-    background: #ffffff;
-    margin: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Title */
-  .model-layout h1 {
-    font-size: 36px;
-    color: #333333;
-    text-align: center;
-  }
-  
-  /* Description and Usage */
-  .model-layout p {
-    color: #666666;
-  }
-  
-  /* Graph */
-  .model-layout .chart-container {
-    height: 400px;
-  }
-  
-  /* Mean Squared Error and Mean Absolute Percentage Error */
-  .model-layout .error-stats {
-    font-size: 18px;
-    color: #999999;
-  }
-  
-  /* Conclusion */
-  .model-layout .conclusion {
-    font-size: 16px;
-    color: #555555;
-  }
-  
-  /* Common styling for buttons (if needed) */
-  button {
-    background-color: #4caf50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
+  background-color: #1F2833;
+}
+
+.model-layout > section {
+  padding: 20px 40px;
+  background-color: #0B0C10;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.model-layout h1 {
+  font-size: 32px;
+  color: #A4A6A9;
+  text-align: center;
+}
+
+/* Description and Usage */
+.model-layout p, .model-layout .conclusion {
+  color: #C5C6C7;
+}
+
+/* Graph */
+.model-layout .chart-container {
+  height: 400px;
+}
+
+/* Error Stats */
+.model-layout .error-stats {
+  font-size: 18px;
+  color: #B0B1B3;
+}
+
+/* Common styling for buttons */
+button {
+  background-color: #45A29E;
+  border: none;
+  color: #1F2833;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #66FCF1;
+  color: #0B0C10;
+}
+

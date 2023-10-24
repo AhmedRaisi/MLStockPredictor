@@ -1,42 +1,74 @@
-/* General styling for the model overview page */
-.model-overview {
-  background-color: #f7f9fc;
+/* Theme Background and Font */
+body {
+  background-color: #1F2833;
+  color: #C5C6C7;
+  font-family: Arial, sans-serif; 
+  margin: 0;
+  padding: 0;
 }
 
-.model-overview > .model {
-  padding: 30px 60px;
-  background: #ffffff;
-  margin: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.model-overview h1 {
-  font-size: 36px;
-  color: #333333;
+/* Header */
+header {
+  background-color: #0B0C10;
+  padding: 15px 0;
   text-align: center;
 }
 
-.model-overview h2 {
-  font-size: 28px;
+/* Main Content */
+.model-overview {
+  background-color: #1F2833;
+  padding: 40px 0; 
 }
 
-.model-overview p {
-  color: #666666;
+.model-overview > .model {
+  padding: 20px 40px;
+  background-color: #0B0C10;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+/* Titles */
+.model-overview h1, .model-overview h2 {
+  color: #A4A6A9;  /* Muted silver-grey color for a more subtle look */
+}
+
+.model-overview h1 {
+  font-size: 32px;  /* Reduced font size */
+  margin-bottom: 20px;
+}
+
+.model-overview h2 {
+  font-size: 24px;  /* Reduced font size */
+  margin-top: 20px;
+}
+
+/* Other Content Styles */
+.model-overview p, .model-overview li {
+  color: #C5C6C7; 
 }
 
 .model-overview a {
-  background-color: #4caf50;
-  border: none;
-  color: white;
+  background-color: #45A29E;
+  color: #1F2833;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
   border-radius: 4px;
   display: inline-block;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .model-overview a:hover {
-  background-color: #45a049;
+  background-color: #66FCF1;
+  color: #0B0C10;
 }
+
+/* Footer (If needed) */
+footer {
+  background-color: #0B0C10;
+  padding: 15px 0;
+  text-align: center;
+}
+
