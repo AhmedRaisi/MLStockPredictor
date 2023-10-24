@@ -1,0 +1,23 @@
+/* General styling for the contact page */
+.contact-page {
+    background-color: #f7f9fc;
+  }
+  
+  .contact-page > section {
+    padding: 30px 60px;
+    background: #ffffff;
+    margin: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 36px;
+    color: #333333;
+  }
+  
+  .hero-section p {
+    color: #666666;
+  }
+  
