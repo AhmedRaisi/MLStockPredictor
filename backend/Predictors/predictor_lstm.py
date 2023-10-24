@@ -9,11 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read the CSV file
-<<<<<<<< HEAD:backend/Predictors/predictor_lstm.py
 file_path = '/mnt/c/Users/Ahmed/Projects/StockPricePredictor/db/TSLA.csv'
-========
-file_path = '../../db/TSLA.csv'
->>>>>>>> 2dd44c98ebd8eb58bbef88f0aad15820c8191a52:predictors/predictor_lstm.py
 df = pd.read_csv(file_path)
 
 # Convert the 'Date' column to datetime
