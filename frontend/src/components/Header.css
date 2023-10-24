@@ -2,18 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #f1f1f1;
+  padding: 20px 40px; /* Increased padding for a more spacious look */
+  background-color: #2E4159;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+  margin-bottom: 0;  /* explicitly set to zero */
+  border-bottom: none;  /* remove any border */
 }
 
 .title {
-  font-size: 1.25rem;
-  color: #333; /* Set the color to dark gray */
+  font-size: 1.5rem;
+  color: #F2BC94; /* Using the brighter contrast color from the theme for the title */
   margin: 0;
 }
 
 .title-link {
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.title-link:hover {
+  color: #E09E77;
 }
 
 .nav-container {
@@ -28,15 +36,21 @@
 
 .header-nav a,
 .models-button {
-  margin-right: 20px; /* Space between links */
-  padding: 5px 10px;
+  margin-right: 20px;
+  padding: 10px 20px;
   text-decoration: none;
-  color: #333;
+  color: #E1E5EB; /* Light text color from the theme */
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover,
+.models-button:hover {
+  color: #F2BC94; /* Hover effect using the brighter contrast color */
 }
 
 .models-button {
-  background: none; /* Removed background */
-  border: none; /* Removed border */
+  background: none;
+  border: none;
   cursor: pointer;
   outline: none;
 }
@@ -51,28 +65,33 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #1F2833;
+  min-width: 180px; /* increased width for better spacing */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .models-list a {
-  color: black;
-  padding: 12px 16px;
+  color: #E1E5EB;
+  padding: 15px 20px;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #eee; /* Border between links */
+  border-bottom: 1px solid #2E4159; /* Border color consistent with the theme */
+  transition: background-color 0.3s ease;
 }
 
 .models-list a:last-child {
-  border-bottom: none; /* Removing border from last link */
+  border-bottom: none;
 }
 
 .models-list a:hover {
-  background-color: #f1f1f1;
+  background-color: #2E4159;
 }
 
 .models-dropdown:hover .models-list {
   display: block;
+}
+
+.header > * {
+  margin-bottom: 0;  /* explicitly set to zero */
 }

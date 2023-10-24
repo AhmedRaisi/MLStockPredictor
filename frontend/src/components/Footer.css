@@ -9,8 +9,10 @@
 }
 
 .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
+  background-color: #2E4159;
+  padding: 20px; /* Increased padding for a more spacious look */
   text-align: center;
   width: 100%;
+  color: #E1E5EB; /* Light text color from the theme */
+  box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
 }
