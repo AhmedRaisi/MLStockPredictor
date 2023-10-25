@@ -1,109 +1,125 @@
 /* General styling */
 body, h1, h2, h3, p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5; /* Enhanced line spacing */
+  line-height: 1.7;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -400px 0;
+  }
 }
 
 .home-page {
-  background-color: #1F2833;
   font-size: 16px;
   color: #E1E5EB;
-  padding: 30px 50px;  /* Padding for the entire home-page */
+  padding: 30px 50px;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #1A242D, #1F2833);
 }
 
 .home-page > section {
   padding: 50px 80px;
-  background: #2E4159;
-  margin-bottom: 30px;  /* Margin for spacing between sections */
+  background: rgba(46, 65, 89, 0.8); 
+  margin-bottom: 30px;
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .home-page > section:last-child {
-  margin-bottom: 0;  /* No margin for the last section */
+  margin-bottom: 0;
 }
 
 /* Hero Section */
 .hero-section {
   position: relative;
   padding: 60px 80px;
-  background: linear-gradient(145deg, rgba(46, 65, 89, 0.9), rgba(31, 40, 51, 0.9));
+  background: linear-gradient(145deg, rgba(46, 65, 89, 0.95), rgba(31, 40, 51, 0.95));
   border-radius: 12px;
+}
+
+.hero-section::before {
+  content: "";
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='40' viewBox='0 0 800 40'%3E%3Cpath d='M0 20 L50 10 L100 30 L150 15 L200 25 L250 5 L300 35 L350 10 L400 20 L450 10 L500 30 L550 15 L600 25 L650 5 L700 35 L750 10 L800 20' stroke='%233A4D70' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 800px 40px;
+  position: absolute;
+  top: 12%;  /* Adjust this value to position the line */
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 1;
+  animation: slide 10s linear infinite;
+}
+
+.hero-section h1, .hero-section p, button {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-section h1 {
   font-size: 46px;
   color: #FFFFFF;
   margin-bottom: 30px;
-  line-height: 1.4; 
   font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.6);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-section p {
   color: #FFFFFF;
   font-size: 20px;
-  line-height: 1.5;
-  font-weight: 500; 
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  font-weight: 400; 
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Features Overview */
-.features-overview h2 {
-  font-size: 34px;
-  color: #66A5AD;
-  margin-bottom: 20px;
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -400px 0;
+  }
 }
 
-/* Model Showcase */
-.model-showcase .chart-container {
-  height: 420px;
-}
-
-.model-showcase h2 {
-  font-size: 34px;
-  color: #66A5AD;
-  margin-bottom: 20px;
-}
-
-/* How It Works */
-.how-it-works h2 {
-  font-size: 34px;
-  color: #66A5AD;
-  margin-bottom: 20px;
-}
-
-/* Model Stories */
-.success-stories h2 {
-  font-size: 34px;
-  color: #66A5AD;
-  margin-bottom: 20px;
-}
-
-/* FAQ */
-.faq h2 {
-  font-size: 34px;
-  color: #66A5AD;
-  margin-bottom: 20px;
-}
-
-/* Common styling for buttons */
+/* Buttons in the hero section */
 button {
   background-color: #F2BC94;
   border: none;
-  color: #2E4159;
-  padding: 17px 38px;
+  color: #1F2833;
+  padding: 15px 35px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 19px;
+  font-size: 18px;
   margin: 10px 5px;
   cursor: pointer;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
-button:hover {
+button.primary-btn {
+  background-color: #F2BC94;
+  color: #1F2833;
+}
+
+button.secondary-btn {
+  background-color: transparent;
+  border: 2px solid #F2BC94;
+  color: #F2BC94;
+}
+
+button:hover.primary-btn, button:hover.secondary-btn {
   background-color: #E09E77;
   color: #1F2833;
+}
+
+/* Footer styling */
+footer {
+  background-color: #1A242D;
+  padding: 15px 25px;
+  text-align: center;
+  width: 100%;
 }

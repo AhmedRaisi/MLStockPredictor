@@ -7,7 +7,10 @@ function HeroSection() {
       <h1>Welcome to MLStockPredictors</h1>
       <p>Your go-to place for top-quality machine learning stock prediction models</p>
       <Link to="/modeloverviewpage">
-          <button>Explore Models</button>
+          <button className="primary-btn">Explore Models</button>
+      </Link>
+      <Link to="/predictions">
+          <button className="secondary-btn">Explore Predictions</button>
       </Link>
     </section>
   );

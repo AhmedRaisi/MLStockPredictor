@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px; /* Increased padding for a more spacious look */
+  padding: 20px 40px;
   background-color: #2E4159;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
-  margin-bottom: 0;  /* explicitly set to zero */
-  border-bottom: none;  /* remove any border */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
 }
 
 .title {
-  font-size: 1.5rem;
-  color: #F2BC94; /* Using the brighter contrast color from the theme for the title */
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #F2BC94, #E1E5EB, #E09E77);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0;
 }
 
@@ -32,20 +39,24 @@
 .header-nav {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .header-nav a,
 .models-button {
-  margin-right: 20px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   text-decoration: none;
-  color: #E1E5EB; /* Light text color from the theme */
-  transition: color 0.3s ease;
+  color: #E1E5EB;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-right: 10px;
 }
 
 .header-nav a:hover,
 .models-button:hover {
-  color: #F2BC94; /* Hover effect using the brighter contrast color */
+  color: #F2BC94;
+  background-color: rgba(242, 188, 148, 0.1);
 }
 
 .models-button {
@@ -55,18 +66,13 @@
   outline: none;
 }
 
-.models-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
 .models-list {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #1F2833;
-  min-width: 180px; /* increased width for better spacing */
+  min-width: 180px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -76,22 +82,15 @@
   padding: 15px 20px;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #2E4159; /* Border color consistent with the theme */
+  border-bottom: 1px solid #2E4159;
   transition: background-color 0.3s ease;
-}
-
-.models-list a:last-child {
-  border-bottom: none;
 }
 
 .models-list a:hover {
   background-color: #2E4159;
+  color: #F2BC94;
 }
 
 .models-dropdown:hover .models-list {
   display: block;
-}
-
-.header > * {
-  margin-bottom: 0;  /* explicitly set to zero */
 }
