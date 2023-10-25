@@ -8,14 +8,18 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/" className="title-link">
-        <h1 className="title">MLStockPredictors</h1>
+        <h1 className="title">
+          <span className="ml">ML</span>
+          <span className="stock">Stock</span>
+          <span className="predictors">Predictors</span>
+        </h1>
       </Link>
       <div className="nav-container">
         <nav className="header-nav">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/predictions">Predictions</Link> 
+          <Link to="/predictions">Predictions</Link>
         </nav>
         <div
           className="models-dropdown"
@@ -23,7 +27,7 @@ const Header = () => {
           onMouseLeave={() => setShowDropdown(false)}
         >
           <Link to="/modeloverviewpage">
-            <button className="models-button" onClick={() => setShowDropdown(!showDropdown)}>
+            <button className="models-button">
               Models ▼
             </button>
           </Link>
