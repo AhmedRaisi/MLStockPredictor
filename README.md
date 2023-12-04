@@ -5,7 +5,7 @@ MLStockPredictors is a web application that features various prediction models f
 ## Technologies Used
 
 - Frontend: React.js
-- Backend: Node.js, Express.js
+- Backend: Django
 - Database: PostgreSQL
 - Data Visualization: Recharts
 - Machine Learning: TensorFlow, Scikit-learn
